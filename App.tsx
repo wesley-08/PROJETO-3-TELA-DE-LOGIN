@@ -7,11 +7,17 @@ function App () {
   //'setCount' vai alterar o valor da constante chamada 'count'
   const [cpf,setCpf] = useState('')
   const [cpfField, setCpfField] = useState('')
+  const [loginCount, setLoginCount] = useState(0);
 
-  function sendCpf() {
-    if(cpfField == '000.000.000-00')
-    setCpf(cpfField)
+function sendCpf() {
+    if (cpfField === '000.000.000-00' || cpfField === '111.111.111-11') {
+      setCpf(cpfField);
+      if (cpfField === '111.111.111-11') {
+        setLoginCount((prevCount) => prevCount + 1);
+      }
+    }
   }
+  
 
   function clearCpf(){
     setCpf('')
@@ -49,14 +55,23 @@ function App () {
           Usuario Logado com o CPF: 000.000.000-00
           </Text>
            <Pressable style={styles.button} onPress={clearCpf}>
-           <Text style={styles.text}>Pressione o botão para sair</Text>
+           <Text style={styles.text}>CPF NÃO E: 000.000.000-00</Text>
            </Pressable>
          </View>
       }
+      {cpf === '111.111.111-11' && (
+        <View>
+          <Image style={styles.image} source={require('./assets/icone-de-pessoas-icone-de-pessoa-icone-de-usuario-no-elegante-estilo-plano-isolado-700-150665401.jpg')} />
+          <Text>Bem-vindo, usuário especial!</Text>
+          <Text>Você fez login {loginCount} vezes.</Text>
+          <Pressable style={styles.button} onPress={clearCpf}>
+            <Text style={styles.text}>Sair</Text>
+          </Pressable>
+        </View>
+      )}
     </SafeAreaView>
   )
 }
-
 const styles = StyleSheet.create({
   exibicao: {
     width: '100%',
