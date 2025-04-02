@@ -5,11 +5,11 @@ function App () {
 
   //'count' vai armazenar e exibir o valor definido
   //'setCount' vai alterar o valor da constante chamada 'count'
-  const [cpf,setCpf] = useState('000.000.000-00')
+  const [cpf,setCpf] = useState('')
   const [cpfField, setCpfField] = useState('')
 
   function sendCpf() {
-    if(cpfField == '')
+    if(cpfField == '000.000.000-00')
     setCpf(cpfField)
   }
 
