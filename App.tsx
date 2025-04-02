@@ -9,7 +9,7 @@ function App () {
   const [cpfField, setCpfField] = useState('')
 
   function sendCpf() {
-    if(cpfField == '000.000.000-00')
+    if(cpfField == '')
     setCpf(cpfField)
   }
 
