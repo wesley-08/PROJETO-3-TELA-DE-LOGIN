@@ -105,11 +105,11 @@ const styles = StyleSheet.create({
 
   button:{
     backgroundColor: 'black',
-        fontSize: '12px',
-        padding: '8px 12px',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
+    fontSize: '12px',
+    padding: '8px 12px',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
   }
 })
 
